@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create page" />
+  <meta name="author" content="Ivan Chamero and Manuel Angel Roman Ramos" />
+  <link href="/static/css/bootstrap.css" rel="stylesheet" />
+  <link href="/static/css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="/static/css/prettyPhoto.css" rel="stylesheet" />
+  <link href="/static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <header>
+      <div class="top">
+        <div class="container">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row nomargin">
+          <div class="span4">
+            <div class="logo">
+              <h1><a href="#">Hotspot Wifi</a></h1>
+            </div>
+          </div>
+          <div class="span8">
+            <div class="navbar navbar-static-top">
+              <div class="navigation">
+                <nav>
+                  <ul class="nav topnav">
+                    <li><a href="/admin"><i class="fas fa-user-shield"></i>&nbsp;Admin</a></li>
+                    <li class="active"><a href="/create"><i class="fas fa-sign-out-alt"></i>&nbsp;Create User</a></li>
+                    <li><a href="/reconfigure"><i class="fas fa-sign-out-alt"></i>&nbsp;Reconfigure parameters</a></li>
+                    <li><a href="/delete"><i class="fas fa-sign-out-alt"></i>&nbsp;Delete user</a></li>
+                    <li><a href="/"><i class="fas fa-sign-out-alt"></i>&nbsp;Log out</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h2>Create User</h2>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li class="active"><a href="#">Create User</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+          <div class="span8">
+
+            <article>
+                <div class="row">
+                  <div class="span8">
+                    <div class="post-image">
+                      <div class="post-heading">
+                        <h3><a href="#">Create User</a></h3>
+                      </div>
+                    </div>
+                    <form id="createUser" action="" method="POST" role="form" class="contactForm">
+                      <div class="row">
+                        <div class="form-group log-status span8 margintop10 field">
+                          <span class="form-hist"><i class="fas fa-user"></i> &nbsp;Mac user</span>
+                          <br><input type="text" placeholder="* Enter MAC user" name="UserName" id="UserName" required>
+                        </div>
+
+                        <div class="span8 margintop10 field form-group">
+                            <span class="form-hist"><i class="fas fa-clock"></i>&nbsp;Entry time</span><br>
+                            <input type="time" id="data-input" name="data-input" required>
+                            <div class="validation"></div>
+                          </div>
+
+                          <div class="span8 margintop10 field form-group">
+                            <span class="form-hist"><i class="fas fa-clock"></i>&nbsp;Departure time</span><br>
+                            <input type="time" id="data-output" name="data-output" required>
+                            <div class="validation"></div>
+                          </div>
+
+                          <p>
+                            <button class="btn marginleft10" type="submit">Create</button>
+                            {% if msg=="created" %}
+                            <div class="alert">
+                              <span class="closebtn">&times;</span>
+                              <strong>Succes</strong>  &nbsp; Created user!
+                            </div>
+                            {% endif %}
+
+                            {% if msg=="userExist" %}
+                            <div class="alert">
+                              <span class="closebtn">&times;</span>
+                              <strong>Error!</strong>  &nbsp; Existing user!
+                            </div>
+                            {% endif %}
+
+                            {% if msg=="dataInvalid" %}
+                            <div class="alert">
+                              <span class="closebtn">&times;</span>
+                              <strong>Error!</strong>  &nbsp; Invalid data!
+                            </div>
+                            {% endif %}
+                          </p>
+                        </div>
+                      </div>
+                    </form>
+
+                </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="widget">
+              <div class="footer_logo">
+                <h3><a href="#"> Hotspot Wifi</a></h3>
+              </div>
+              <address>
+                <strong>Polytechnic University of Catalonia.</strong><br>
+                Av. de les Bases de Manresa, 61-73. <br>
+                08242 Manresa
+              </address>
+              <p>
+                (+34) 93 877 72 00  <br>
+              </p>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="widget">
+              <h5 class="widgetheading">Other information</h5>
+              <ul class="link-list">
+                <li><a href="#">Ivan Chamero</a></li>
+                <li><a href="#">Manuel Ángel Román</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="widget">
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sub-footer">
+        <div class="container">
+          <div class="row">
+            <div class="span6">
+              <div class="credits">
+              Created by our group</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

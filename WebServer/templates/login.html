@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login page" />
+    <meta name="author" content="Ivan Chamero and Manuel Angel Roman Ramos" />
+    <title>Login</title>
+    <link href="/static/" rel="stylesheet" />
+    <link href="/static/" rel="stylesheet" />
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/login.css" rel="stylesheet">
+  </head>
+<body>
+    <div class="container container-margin">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="/static/img/wifi-zone.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" method="POST">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="textUser" class="form-control" name ="textUser" placeholder="Username" required autofocus>
+                <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+                <button type="submit" class="log-btn entrar-btn"><i class="fas fa-sign-in-alt"></i>&nbsp;Sign In</button>
+
+                {% if error==True %}
+                <div class="alert">
+                  <span class="closebtn">&times;</span>
+                  <strong>Error!</strong>  &nbsp; Incorrect credentials
+                </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
