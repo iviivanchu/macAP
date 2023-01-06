@@ -27,10 +27,6 @@ Create the database by running python3 db.py in the DataBase directory
 
 Change the path of the database file in the models.py file in the WebServer directory. To change it run pwd in the DataBase directory and paste the output + '/siscom.db' into the database variable of the models.py  file.
 
-#### Third step
-
-Change the path of the database file in the models.py file in the WebServer directory. To change it run pwd in the DataBase directory and paste the output + '/siscom.db' into the database variable of the models.py  file.
-
 #### Fourth step
 
 Run the main server program withsudo python3 __init__.py in the WebServer directory.
